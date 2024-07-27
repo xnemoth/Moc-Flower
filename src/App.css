@@ -1,0 +1,65 @@
+* {
+  font-family: "Mulish", sans-serif;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.btn.btn-outline-secondary {
+  border-color: #DEE2E6;
+  border-left: 0px;
+  border-radius: 20px;
+}
+
+.input-group input.form-control {
+  border-right: none;
+  border-radius: 20px 0px 0px 20px !important;
+}
+
+.header__menu-top {
+  background-color: #59C8E0;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.header__menu-top .fa-brands {
+  font-size: 24px;
+}
+
+.header__menu-navbar {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+}
+.header__menu-navbar .nav .nav-item a {
+  color: #172B4D;
+}
+.header__menu-navbar .ting {
+  height: 24px;
+}
+
+.footer .footer-nav {
+  background-color: #59C8E0;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.footer .footer-nav img {
+  height: 16px;
+}
+.footer .footer-nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.footer .footer-info {
+  background-color: #2C3749;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=App.css.map */
