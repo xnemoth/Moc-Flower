@@ -1,33 +1,41 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ting from '../../assets/ting.png'
+import ting from "../../assets/ting.png";
+const data = 6;
 
 function Header() {
   return (
     <div className="header__menu">
-      <div className="header__menu-top py-2 px-1 w-100">
-        <div className="d-flex flex-row justify-content-around px-5">
-          <div className="d-flex flex-row align-items-center w-50">
+      <div className="header__menu-top d-flex flex-row justify-content-around py-2 w-100">
+        <div className="header__menu-top_social d-flex flex-row align-items-center">
+          <a href="#">
             <i className="fa-brands fa-facebook-f mx-2 align-middle"></i>
-            <div className="vr"></div>
+          </a>
+          <div className="vr"></div>
+          <a href="#">
             <i className="fa-brands fa-instagram mx-2"></i>
-          </div>
-          <div className="d-flex flex-row align-items-center justify-content-end w-50">
+          </a>
+        </div>
+        <div className="header__menu-top_nav d-flex flex-row align-items-center justify-content-end">
+          <a href="#">
             <div className="mx-2">Blog</div>
-            <div className="vr"></div>
+          </a>
+          <div className="vr"></div>
+          <a href="#">
             <div className="mx-2">Giới thiệu</div>
-            <div className="vr"></div>
-            <div className="mx-2">
-              <i className="fa-regular fa-user mx-2"></i>Đăng nhập
-            </div>
-          </div>
+          </a>
+          <div className="vr"></div>
+          <a href="#">
+            <i className="fa-regular fa-user mx-2"></i>Đăng nhập
+            <div className="mx-2"></div>
+          </a>
         </div>
       </div>
       <div className="header__menu-hero py-2 px-1 border-bottom">
-        <div className="text-center px-5">
-          <div className="d-flex justify-content-between">
-            <div className="">
+        <div className="header__menu-hero-container d-flex justify-content-between text-center">
+          <div className="header__menu-hero-logo">
+            <a href="/">
               <div className="d-flex flex-f">
-                <div className="mx-1 px-1">
+                <div className="mx-1 px-1 logo-1">
                   <svg
                     width="71"
                     height="64"
@@ -93,7 +101,7 @@ function Header() {
                     />
                   </svg>
                 </div>
-                <div className="mx-1 px-1">
+                <div className="mx-1 px-1 logo-2">
                   <svg
                     width="289"
                     height="56"
@@ -284,70 +292,70 @@ function Header() {
                   </svg>
                 </div>
               </div>
+            </a>
+          </div>
+          <div className="search-box d-flex flex-end align-items-center w-50">
+            <div className="input-group h-50">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Tìm kiếm sản phẩm"
+                aria-label="Tìm kiếm"
+                aria-describedby="button-addon2"
+              />
+              <button className="btn btn-outline-secondary" id="button-addon2">
+                <i className="fa fa-search"></i>
+              </button>
             </div>
-            <div className="d-flex flex-end align-items-center w-50">
-              <div className="input-group h-50">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Tìm kiếm sản phẩm"
-                  aria-label="Tìm kiếm"
-                  aria-describedby="button-addon2"
-                />
-                <button
-                  className="btn btn-outline-secondary"
-                  id="button-addon2"
-                >
-                  <i className="fa fa-search"></i>
-                </button>
-              </div>
-              <div className="mx-3">
+            <div className="mx-3">
+              <button type="button" className="btn position-relative">
                 <i className="fa-solid fa-bag-shopping"></i>
-              </div>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {data}
+                </span>
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div className="header__menu-navbar py-2 px-1">
-        <div className="">
-          <ul className="nav nav-underline d-flex flex-row flex-start align-items-center px-5">
-            <li className="nav-item">
-              <a className="nav-link px-3" aria-current="page" href="#">
-                Trang chủ
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link px-3" href="#">
-                Lan hồ điệp
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link px-3" href="#">
-                Chủ đề theo mùa
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link px-3" href="#">
-                Sinh nhật
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link px-3" href="#">
-                Chúc mừng
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link px-3" href="#">
-                Chia buồn
-              </a>
-            </li>
-            <li className="nav-item d-flex flex-row align-items-center">
-              <a className="nav-link px-3" href="#">
-              <img src={ting} alt="ting" className="ting px-1"/> KHUYẾN MÃI
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul className="nav nav-underline d-flex flex-row flex-start justify-content-start align-items-center px-5">
+          <li className="nav-item">
+            <a className="nav-link px-3 mx-3" aria-current="page" href="#">
+              Trang chủ
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link px-3 mx-3" href="#">
+              Lan hồ điệp
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link px-3 mx-3" href="#">
+              Chủ đề theo mùa
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link px-3 mx-3" href="#">
+              Sinh nhật
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link px-3 mx-3" href="#">
+              Chúc mừng
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link px-3 mx-3" href="#">
+              Chia buồn
+            </a>
+          </li>
+          <li className="nav-item d-flex flex-row align-items-center">
+            <a className="nav-link px-3 mx-3" href="#">
+              <img src={ting} alt="ting" className="ting px-1" /> KHUYẾN MÃI
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );

@@ -1,262 +1,509 @@
-@import '../variable';  
+@import "../variable";
 
-$border-color_gray: #DEE2E6;
+$border-color_gray: #dee2e6;
 
 * {
-    font-family: "Mulish", sans-serif;;
+  font-family: "Mulish", sans-serif;
 }
 
 #root {
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+@mixin xsmall {
+  @media (max-width: 425px) {
+    @content;
   }
+}
 
 @mixin small {
-    @media (max-width: 768px) {
-        @content;
-    }
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 @mixin medium {
-    @media (max-width: 1024px) {
-        @content
-}
+  @media (max-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin large {
-    @media (max-width: 1440px) {
-        @content
-    }
+  @media (max-width: 1440px) {
+    @content;
+  }
 }
 
-.btn {   
-    &.btn-outline-secondary {
-        border-color: $border-color_gray;
-        border-left: 0px;
-        border-radius: 20px;
-}
+.btn {
+  &.btn-outline-secondary {
+    border-color: $border-color_gray;
+    border-left: 0px;
+    border-radius: 20px;
+  }
 }
 
 .input-group {
-    input {
-        &.form-control {
-            border-right: none;
-            border-radius: 20px 0px 0px 20px !important;
-        }
+  input {
+    &.form-control {
+      border-right: none;
+      border-radius: 20px 0px 0px 20px !important;
     }
+  }
 }
 
 .header__menu-top {
+  background-color: $primary-color_teal;
+  color: $ink-color_lighter;
+  font-size: map-get($font-size, caption-1);
+  line-height: map-get($line-height, subtitle-2);
+  font-weight: 400;
+  padding: 3rem 3rem !important;
 
-    background-color: $primary-color_teal;
-    color: $ink-color_lighter;
-    font-size: map-get($font-size, caption-1 );
-    line-height: map-get($line-height, subtitle-2 );
-    font-weight: 400;
-
-    .fa-brands {
-        font-size: map-get($font-size, head-3 );
+  @include xsmall() {
+    & {
+      padding: 3rem 1rem !important;
     }
+  }
+
+  & .header__menu-top_social {
+    width: 50%;
+
+    @include xsmall() {
+      & {
+        width: 30% !important;
+      }
+    }
+  }
+
+  & .header__menu-top_nav {
+    width: 50%;
+
+    @include xsmall() {
+      & {
+        width: 70% !important;
+      }
+    }
+  }
+
+  .fa-brands {
+    font-size: map-get($font-size, head-3);
+  }
+
+  & a {
+    text-decoration: none;
+    color: $ink-color_lighter;
+  }
 }
 
-.header__menu-navbar{
+.header__menu-hero {
+  & .header__menu-hero-container {
+    padding: 0rem 2rem !important;
+  }
 
-    font-size: map-get($font-size, SUBTITLE-1 );
-    line-height: map-get($line-height, subtitle-2 );
-    font-weight: 700;
-    
-    & .nav {
-        & .nav-item {
-            a {
-                color: $ink-color_basic;
-            }
-        }
+  @include xsmall() {
+    & .header__menu-hero-container {
+      padding: 0rem 0rem !important;
     }
 
-    .ting {
-        height: 24px;
+    & .search-box {
+      width: 75% !important;
     }
+  }
+
+  & .input-group {
+    & input {
+      &:focus {
+        box-shadow: none;
+        border-color: $border-color_gray;
+      }
+    }
+    & button {
+      &:hover {
+        background-color: $ink-color_lighter;
+        border-color: $border-color_gray;
+        color: $ink-color_basic;
+      }
+    }
+  }
+
+  & .header__menu-hero-logo {
+    @include xsmall() {
+      & .logo-1 {
+        width: 50px;
+      }
+
+      & .logo-2 {
+        display: none;
+      }
+    }
+  }
+}
+
+.header__menu-navbar {
+  font-size: map-get($font-size, SUBTITLE-1);
+  line-height: map-get($line-height, subtitle-2);
+  font-weight: 700;
+
+  & .nav {
+    & .nav-item {
+      a {
+        color: $ink-color_basic;
+      }
+    }
+  }
+
+  .ting {
+    height: 24px;
+  }
 }
 
 .content {
-    & .banner {
-        img {
-            max-width: 100%;
-        }
-
-        & .banner-text {
-            @include medium {
-                margin-top: 1rem !important;
-                padding-top: 2rem !important;
-                & .banner__header {
-                    font-size: map-get($font-size, head-2 ) !important;
-                    line-height: map-get($line-height, head-2 ) !important;
-                    padding-left: 0.5rem !important;
-                }
-                & .banner__slogan {
-                    font-size: map-get($font-size, subtitle-2) !important;
-                    line-height: map-get($line-height, subtitle-2) !important;
-                    padding-left: 0.5rem !important;
-                }
-            }
-
-            @include small() {
-                margin-top: 0.5rem !important;
-                padding-top: 1rem !important;
-                & .banner__header {
-                    font-size: map-get($font-size, head-3 ) !important;
-                    line-height: map-get($line-height, head-3 ) !important;
-                    padding-left: 0rem !important;
-                }
-                & .banner__slogan {
-                    font-size: map-get($font-size, subtitle-2) !important;
-                    line-height: map-get($line-height, subtitle-2) !important;
-                    padding-left: 0rem !important;
-                    max-width: 50%;
-                }
-            }
-
-            & .banner__header {
-                font-size: map-get($font-size, head-1 );
-                line-height: map-get($line-height, head-1 );
-                color: $ink-color_teal;
-                font-weight: 700;
-            }
-            
-            & .banner__slogan {
-                font-size: map-get($font-size, SUBTITLE-1);
-                line-height: map-get($line-height, SUBTITLE-1);
-                color: $ink-color_light;
-                font-weight: 400;
-            }
-        }
+  & .banner {
+    img {
+      max-width: 100%;
     }
 
-    & .showcase-grid {
-        & .showcase-grid__title {
-            font-size: map-get($font-size, head-2 );
-            line-height: map-get($line-height, head-2 );
-            color: $secondary-color_basic; 
-            font-weight: 700;
+    & .banner-text {
+      @include medium {
+        margin-top: 1rem !important;
+        padding-top: 2rem !important;
+        & .banner__header {
+          font-size: map-get($font-size, head-2) !important;
+          line-height: map-get($line-height, head-2) !important;
+          padding-left: 0.5rem !important;
+        }
+        & .banner__slogan {
+          font-size: map-get($font-size, subtitle-2) !important;
+          line-height: map-get($line-height, subtitle-2) !important;
+          padding-left: 0.5rem !important;
+        }
+      }
+
+      @include small() {
+        margin-top: 0.5rem !important;
+        padding-top: 1rem !important;
+        & .banner__header {
+          font-size: map-get($font-size, head-3) !important;
+          line-height: map-get($line-height, head-3) !important;
+          padding-left: 0rem !important;
+        }
+        & .banner__slogan {
+          font-size: map-get($font-size, subtitle-2) !important;
+          line-height: map-get($line-height, subtitle-2) !important;
+          padding-left: 0rem !important;
+          max-width: 50%;
         }
 
-        & .showcase-grid__content {
-            font-size: map-get($font-size, SUBTITLE-1);
-            line-height: map-get($line-height, SUBTITLE-1);
-            color: $ink-color_light;
-            font-weight: 400;
+        @include xsmall() {
+          margin-top: 0rem !important;
+          padding-top: 0rem !important;
         }
 
-        & .showcase-grid__listImg {
-            & .showcase-grid__listImg_single {
-                position: relative;
-                border: none;
-
-                & img {
-                    filter: brightness(0.5);
-                    object-fit: cover;
-                    height: 100%;
-                }
-
-                & .listImg__popup {
-                    font-size: map-get($font-size, head-3);
-                    line-height: map-get($line-height, head-3 );
-                    font-weight: 700;
-                    color: $ink-color_lighter;
-
-                    & .listImg__popup-btn {
-                        font-size: map-get($font-size, subtitle-2);
-                        line-height: map-get($line-height, subtitle-2 );
-                        border-radius: 15px;
-                    }
-                }
-            }
+        & .banner__header {
+          margin-top: 1rem !important;
+          margin-left: 1rem !important;
         }
+
+        & .banner__slogan {
+          margin-left: 1rem !important;
+
+          @media (max-width: 375px) {
+            display: none !important;
+          }
+        }
+      }
+
+      & .banner__header {
+        font-size: map-get($font-size, head-1);
+        line-height: map-get($line-height, head-1);
+        color: $ink-color_teal;
+        font-weight: 700;
+      }
+
+      & .banner__slogan {
+        font-size: map-get($font-size, SUBTITLE-1);
+        line-height: map-get($line-height, SUBTITLE-1);
+        color: $ink-color_light;
+        font-weight: 400;
+      }
     }
-     & .choose-us {
-            background-image: url("src/assets/content/about.png");
-            background-size: cover;
-            background-repeat: no-repeat;
+  }
 
-        & .choose-us__content {
-            z-index: 1;
-            position: relative;
-        }
+  & .showcase-grid {
+    & .showcase-grid__title {
+      font-size: map-get($font-size, head-2);
+      line-height: map-get($line-height, head-2);
+      color: $secondary-color_basic;
+      font-weight: 700;
+    }
 
-        & .choose-us__header {
-            background-color: transparent;
-            font-size: map-get($font-size, head-2 );
-            line-height: map-get($line-height, head-2 );
-            font-weight: 700;
-            color: $secondary-color_basic;
-        }
-     }
+    & .showcase-grid__content {
+      font-size: map-get($font-size, SUBTITLE-1);
+      line-height: map-get($line-height, SUBTITLE-1);
+      color: $ink-color_light;
+      font-weight: 400;
+    }
 
-     & .carousel__feedback {
-        & .carousel__feedback-header {
-            font-size: map-get($font-size, head-2 );
-            line-height: map-get($line-height, head-2 );
-            font-weight: 700;
-            color: $secondary-color_basic;
-        }
-     }
-
-     & .slider__coop {
-        & .slider__coop-header {
-            font-size: map-get($font-size, head-2 );
-            line-height: map-get($line-height, head-2 );
-            font-weight: 700;
-            color: $secondary-color_basic;
-        }
+    & .showcase-grid__listImg {
+      & .showcase-grid__listImg_single {
+        position: relative;
+        border: none;
 
         & img {
-            max-width: 50%;
+          filter: brightness(0.5);
+          object-fit: cover;
+          height: 100%;
         }
-     }
+
+        & .listImg__popup {
+          font-size: map-get($font-size, head-3);
+          line-height: map-get($line-height, head-3);
+          font-weight: 700;
+          color: $ink-color_lighter;
+
+          & .listImg__popup-btn {
+            font-size: map-get($font-size, subtitle-2);
+            line-height: map-get($line-height, subtitle-2);
+            border-radius: 15px;
+          }
+        }
+      }
+    }
+  }
+  & .choose-us {
+    background-image: url("src/assets/content/about.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & .choose-us__content {
+      z-index: 1;
+      position: relative;
+    }
+
+    & .choose-us__header {
+      background-color: transparent;
+      font-size: map-get($font-size, head-2);
+      line-height: map-get($line-height, head-2);
+      font-weight: 700;
+      color: $secondary-color_basic;
+    }
+
+    & .choose-us__slider {
+      & .items_group {
+        overflow: visible;
+      }
+
+      & .card {
+        &.active {
+          transform: scale(1.2);
+          z-index: 3;
+          transition: all 0.5s ease-in-out;
+        }
+
+        & .card__icon {
+          & img {
+            max-width: 20%;
+          }
+        }
+
+        & .card__header {
+          font-size: map-get($font-size, title);
+          line-height: map-get($line-height, title);
+          font-weight: 700;
+          color: $ink-color_basic;
+        }
+
+        & .card__content {
+          font-size: map-get($font-size, caption-1);
+          line-height: map-get($line-height, SUBTITLE-1);
+          font-weight: 400;
+          color: $ink-color_light;
+        }
+      }
+
+      & .carousel-indicators {
+        bottom: auto;
+
+        & button {
+          width: 5px;
+          height: 5px;
+          padding: 5px;
+          border-radius: 100%;
+
+          &.active {
+            background-color: $secondary-color_lighter;
+          }
+        }
+      }
+    }
+  }
+
+  & .carousel__feedback {
+    & .carousel__feedback-header {
+      font-size: map-get($font-size, head-2);
+      line-height: map-get($line-height, head-2);
+      font-weight: 700;
+      color: $secondary-color_basic;
+    }
+
+    & .carousel__feedback-content {
+      & .container-fluid {
+        & a {
+          opacity: 1;
+
+          &.carousel-control-prev {
+            left: 0;
+            justify-content: flex-start;
+
+            & span {
+              background-color: $background-color_lighter;
+              border-radius: 100%;
+              width: 40px;
+              height: 40px;
+              box-shadow: 1px 1px 2px 0px $border-color_gray;
+            }
+          }
+
+          &.carousel-control-next {
+            right: 0;
+            justify-content: flex-end;
+
+            & span {
+              background-color: $background-color_lighter;
+              border-radius: 100%;
+              width: 40px;
+              height: 40px;
+              box-shadow: 1px 1px 2px 0px $border-color_gray;
+            }
+          }
+
+          & .carousel-controller {
+            border-radius: 100%;
+            & i {
+              font-size: map-get($font-size, title);
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .slider__coop {
+    position: relative;
+
+    & .slider__coop-header {
+      font-size: map-get($font-size, head-2);
+      line-height: map-get($line-height, head-2);
+      font-weight: 700;
+      color: $secondary-color_basic;
+    }
+
+    & .slider__coop-content {
+      & img {
+        max-width: 50%;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.5s ease-in-out;
+          box-shadow: 2px 2px 4px -2px $ink-color_light;
+        }
+      }
+    }
+  }
 }
 
 .footer {
-    & .footer-nav {
-        background-color: $primary-color_teal;
-        font-size: map-get($font-size, subtitle-2 );
-        color: $ink-color_lighter;
+  & a {
+    text-decoration: none;
+    color: $ink-color_lighter;
+  }
 
-        & img {
-            height: map-get($font-size, SUBTITLE-1 );
+  & .footer-nav {
+    background-color: $primary-color_teal;
+    font-size: map-get($font-size, subtitle-2);
+    color: $ink-color_lighter;
+
+    & img {
+      height: map-get($font-size, SUBTITLE-1);
+    }
+
+    & a {
+      text-decoration: none;
+      color: $ink-color_lighter;
+    }
+
+    @include xsmall() {
+      & {
+        justify-content: space-around !important;
+      }
+
+      & .footer-nav-text {
+        display: none;
+      }
+    }
+  }
+
+  & .footer-info {
+    background-color: $background-color_footer;
+    color: $ink-color_lighter;
+    font-size: map-get($font-size, subtitle-2);
+    line-height: map-get($line-height, subtitle-2);
+    font-weight: 400;
+
+    & .footer-info-part {
+      &.part-info {
+        width: 50%;
+      }
+    }
+
+    @include xsmall() {
+      & {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      & .footer-info-part {
+        &.part-info {
+          flex-direction: row !important;
+          width: 100% !important;
         }
 
-        & a {
-            text-decoration: none;
-            color: $ink-color_lighter;
-        }
-    }
-
-    & .footer-info {
-         background-color: $background-color_footer;
-         color: $ink-color_lighter;
-         font-size: map-get($font-size, subtitle-2 );
-         line-height: map-get($line-height, subtitle-2 );
-         font-weight: 400;
-
-         & .footer-social {
-            img {
-                width: 30px;
+        & .footer-info-part_social {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+    
+            & .footer-info-part_social-text {
+                display: none;
             }
-         }
 
-         & .footer-cer {
-            img {
-                width: 200px;
+            & .footer-social {
+                padding-right: 1rem;
             }
-         }
-
+          }
+      }
     }
 
-    & .footer-copyright {
-        background-color: #3B4556;
-        color: $ink-color_lighter;
-        font-size: map-get($font-size, subtitle-2 );
-        line-height: map-get($line-height, subtitle-2);
+    & .footer-social {
+      img {
+        width: 30px;
+      }
     }
+
+    & .footer-cer {
+      img {
+        width: 200px;
+      }
+    }
+  }
+
+  & .footer-copyright {
+    background-color: #3b4556;
+    color: $ink-color_lighter;
+    font-size: map-get($font-size, subtitle-2);
+    line-height: map-get($line-height, subtitle-2);
+  }
 }

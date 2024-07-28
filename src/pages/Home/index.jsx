@@ -156,64 +156,66 @@ function Home() {
           </div>
           <div
             id="slider__Indicator"
-            className="choose-us__slider card-group my-2 py-3"
+            className="choose-us__slider carousel slide my-2 py-3"
           >
-            <div className="card d-flex flex-column justify-content-center">
-              <div>
-                <img src={choose1} alt="Why us" />
+            <div className="carousel-inner card-group items_group">
+              <div className="card carousel-item d-flex flex-column justify-content-center shadow rounded px-2 py-2 mx-2 z-2">
+                <div className="card__icon my-2">
+                  <img src={choose1} alt="Why us" />
+                </div>
+                <div className="card__header my-3">Chứng nhận sản phẩm</div>
+                <div className="card__content py-2">
+                  Sảm phẩm của chúng tôi tự hào được chứng nhận chất. Với các
+                  loại hoa hoa dạng được nhập khẩu đảm bảo chất lượng sản phẩm.
+                </div>
               </div>
-              <div>Chứng nhận sản phẩm</div>
-              <div>
-                Sảm phẩm của chúng tôi tự hào được chứng nhận chất. Với các loại
-                hoa hoa dạng được nhập khẩu đảm bảo chất lượng sản phẩm.
+              <div className="card carousel-item active d-flex flex-column justify-content-center shadow rounded px-2 py-2 mx-2">
+                <div className="card__icon my-2">
+                  <img src={choose2} alt="Why us" />
+                </div>
+                <div className="card__header my-3">Uy tín hàng đầu</div>
+                <div className="card__content py-2">
+                  Với nhiều năm kinh nghiệm phục vụ trong ngành điện hoa, Mộc
+                  Flowers hiểu mức độ quan trọng trong công việc của mình là
+                  truyền tải đúng và đủ thông điệp của người tặng đến người
+                  nhận. Vì thế chúng tôi cam kết 100% sự hài lòng của khách hàng
+                  với dịch vụ điện hoa của chúng tôi.
+                </div>
+              </div>
+              <div className="card carousel-item d-flex flex-column justify-content-center shadow rounded px-2 py-2 mx-2 z-2">
+                <div className="card__icon my-2">
+                  <img src={choose3} alt="Why us" />
+                </div>
+                <div className="card__header my-3">Chất lượng tuyệt vời</div>
+                <div className="card__content py-2">
+                  Luôn cam kết đặt chất lượng hoa luôn tươi mới lên hàng đầu
+                  giao cho khách. Các mẫu hoa luôn được cắm đủ số lượng và giống
+                  kiểu dáng đã đặt.
+                </div>
               </div>
             </div>
-            <div className="card d-flex flex-column justify-content-center">
-              <div>
-                <img src={choose2} alt="Why us" />
-              </div>
-              <div>Uy tín hàng đầu</div>
-              <div>
-                Với nhiều năm kinh nghiệm phục vụ trong ngành điện hoa, Mộc
-                Flowers hiểu mức độ quan trọng trong công việc của mình là
-                truyền tải đúng và đủ thông điệp của người tặng đến người nhận.
-                Vì thế chúng tôi cam kết 100% sự hài lòng của khách hàng với
-                dịch vụ điện hoa của chúng tôi.{" "}
-              </div>
+            <div className="carousel-indicators mt-3 pt-3 z-3">
+              <button
+                type="button"
+                data-bs-target="#slider__Indicator"
+                data-bs-slide-to="0"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#slider__Indicator"
+                className="active"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#slider__Indicator"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
             </div>
-            <div className="card d-flex flex-column justify-content-center">
-              <div>
-                <img src={choose3} alt="Why us" />
-              </div>
-              <div>Chất lượng tuyệt vời</div>
-              <div>
-                Luôn cam kết đặt chất lượng hoa luôn tươi mới lên hàng đầu giao
-                cho khách. Các mẫu hoa luôn được cắm đủ số lượng và giống kiểu
-                dáng đã đặt.
-              </div>
-            </div>
-          </div>
-          <div className="carousel-indicators my-5">
-            <button
-              type="button"
-              data-bs-target="#slider__Indicator"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#slider__Indicator"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#slider__Indicator"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
           </div>
         </div>
       </div>
@@ -222,65 +224,24 @@ function Home() {
           Khách hàng nói gì về chúng tôi
         </div>
         <div className="carousel__feedback-content">
-          {/* <div
-            id="carouselInterval"
-            className="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active" data-bs-interval="10000">
-                <img src={carousel1} className="d-block w-50" alt="..." />
-              </div>
-              <div className="carousel-item" data-bs-interval="2000">
-                <img src={carousel2} className="d-block w-50" alt="..." />
-              </div>
-              <div className="carousel-item">
-                <img src={carousel3} className="d-block w-50" alt="..." />
-              </div>
-            </div>
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselInterval"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselInterval"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div> */}
           <div className="container-fluid">
-            <div id="carousel" className="carousel slide" data-ride="carousel">
+            <div id="feedback" className="carousel slide" data-ride="carousel">
               <div className="carousel-inner row w-100 mx-auto" role="listbox">
-                <div className="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                <div className="col-4">
                   <img
                     src={carousel1}
                     className="img-fluid mx-auto d-block"
                     alt="img1"
                   />
                 </div>
-                <div className="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <div className="col-4">
                   <img
                     src={carousel2}
                     className="img-fluid mx-auto d-block"
                     alt="img2"
                   />
                 </div>
-                <div className="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <div className="col-4">
                   <img
                     src={carousel3}
                     className="img-fluid mx-auto d-block"
@@ -289,28 +250,30 @@ function Home() {
                 </div>
               </div>
               <a
-                className="carousel-control-prev"
-                href="#carousel"
+                className="carousel-control-prev ms-2"
+                href="#feedback"
                 role="button"
                 data-slide="prev"
               >
                 <span
-                  className="carousel-control-prev-icon"
+                  className="carousel-controller d-flex flex-row justify-content-center align-items-center"
                   aria-hidden="true"
-                ></span>
-                <span className="sr-only">Previous</span>
+                >
+                  <i className="fa-solid fa-chevron-left"></i>
+                </span>
               </a>
               <a
-                className="carousel-control-next"
-                href="#carousel"
+                className="carousel-control-next me-2"
+                href="#feedback"
                 role="button"
                 data-slide="next"
               >
                 <span
-                  className="carousel-control-next-icon"
+                  className="carousel-controller d-flex flex-row justify-content-center align-items-center"
                   aria-hidden="true"
-                ></span>
-                <span className="sr-only">Next</span>
+                >
+                  <i className="fa-solid fa-chevron-right"></i>
+                </span>
               </a>
             </div>
           </div>
@@ -319,10 +282,18 @@ function Home() {
       <div className="slider__coop py-3">
         <div className="slider__coop-header py-3">Đối tác của chúng tôi</div>
         <div className="slider__coop-content row">
-            <div className="col"><img src={coop1} alt="Epal" /></div>
-            <div className="col"><img src={coop2} alt="Halozend" /></div>
-            <div className="col"><img src={coop3} alt="VinHoliday" /></div>
-            <div className="col"><img src={coop4} alt="Sacombank" /></div>
+          <div className="col slider__coop-item py-2">
+            <img src={coop1} alt="Epal" />
+          </div>
+          <div className="col slider__coop-item py-2">
+            <img src={coop2} alt="Halozend" />
+          </div>
+          <div className="col slider__coop-item py-2">
+            <img src={coop3} alt="VinHoliday" />
+          </div>
+          <div className="col slider__coop-item py-2">
+            <img src={coop4} alt="Sacombank" />
+          </div>
         </div>
       </div>
     </div>
